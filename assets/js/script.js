@@ -1,7 +1,7 @@
 var timeEl = $(".time span").text()
 var taskColourEl = $(".input-group input")
 var currentHour = moment().format("HH:00");
-var task1 = $("#task1").val()
+
 
 // grabs the time in the span and splits them into an array
 timeEl = timeEl.split(" ")
@@ -41,19 +41,61 @@ for (let i = 0; i < timeEl.length; i++) {
     }
 }
 
+
+
 // to listen for the save button click
 $(".save").click(function (event) {
+    var task1 = $("#task1").val()
+    var task2 = $("#task2").val()
+    var task3 = $("#task3").val()
+    var task4 = $("#task4").val()
+    var task5 = $("#task5").val()
+    var task6 = $("#task6").val()
+    var task7 = $("#task7").val()
+    var task8 = $("#task8").val()
+    var task9 = $("#task9").val()
+    var task10 = $("#task10").val()
+    console.log(task1)
+    console.log(task2)
+
     event.preventDefault();
 
+    var savedTasks = {
+        task1: task1,
+        task2: task2,
+        task3: task3,
+        task4: task4,
+        task5: task5,
+        task6: task6,
+        task7: task7,
+        task8: task8,
+        task9: task9,
+        task10: task10,
+
+
+    }
+    console.log(savedTasks)
+    localStorage.setItem("task", task1)
+    localStorage.setItem("savedTasks", JSON.stringify(savedTasks));
+    renderTasks();
     console.log("task logged")
 });
 
-var savedTasks = {
-    task1: task1,
-
+function renderTasks() {
+    var lastTask = JSON.parse(localStorage.getItem("savedTasks"));
+    if (lastTask !== null) {
+        $("#task1").attr("value", lastTask.task1)
+        $("#task2").attr("value", lastTask.task2)
+        $("#task3").attr("value", lastTask.task3)
+        $("#task4").attr("value", lastTask.task4)
+        $("#task5").attr("value", lastTask.task5)
+        $("#task6").attr("value", lastTask.task6)
+        $("#task7").attr("value", lastTask.task7)
+        $("#task8").attr("value", lastTask.task8)
+        $("#task9").attr("value", lastTask.task9)
+        $("#task10").attr("value", lastTask.task10)
+        console.log('hi')
+    }
 }
 
-
-localStorage.setItem("savedTasks", JSON.stringify(savedTasks));
-
-var tasks = localStorage.setItem("task", task1)
+renderTasks();
