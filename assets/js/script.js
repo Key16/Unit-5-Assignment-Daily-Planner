@@ -80,7 +80,7 @@ $(".save").click(function (event) {
     renderTasks();
     console.log("task logged")
 });
-
+//render  the tasks if saved in local storage
 function renderTasks() {
     var lastTask = JSON.parse(localStorage.getItem("savedTasks"));
     if (lastTask !== null) {
