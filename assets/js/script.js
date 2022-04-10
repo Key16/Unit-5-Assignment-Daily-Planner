@@ -8,7 +8,7 @@ timeEl = timeEl.split(" ")
 // using pop as it made an extra white value at the end but i couldn't find out why. so this removes it
 timeEl.pop();
 
-// console.log(tasks)
+
 // tasks.value()
 console.log(timeEl)
 console.log(timeEl[0]);

@@ -2,7 +2,7 @@
 
 ## Overview:
 
-![Screenshot of daily planner.](./Images/dailyplaner.png)
+![Screenshot of daily planner.](./assets/Images/dailyplanner.png) 
 
 To view the code click here
 [click here](https://github.com/Key16/Unit-5-Assignment-Daily-Planner).
